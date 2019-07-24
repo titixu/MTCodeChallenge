@@ -52,7 +52,7 @@ class APIClientTests: XCTestCase {
         XCTAssertEqual(transactions[0].accountId, 1)
     }
     
-    func testJsonDateFormaater() {
+    func testJsonDateFormatter() {
         let formatter = DateFormatter.jsonDateFormatter
         let dateString = "2017-08-22T00:00:00+09:00"
         let date = formatter.date(from: dateString)

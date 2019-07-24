@@ -11,14 +11,11 @@
 		2236308622E81A810086260F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E8C8C22E8198A00980D0C /* Theme.swift */; };
 		2236308722E81ABE0086260F /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E8C8822E8191C00980D0C /* Account.swift */; };
 		2236308822E81ABF0086260F /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E8C8822E8191C00980D0C /* Account.swift */; };
-		2236308A22E81B030086260F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236308922E81B030086260F /* APIClient.swift */; };
-		2236308B22E81B030086260F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236308922E81B030086260F /* APIClient.swift */; };
 		2236308C22E81B5E0086260F /* transactions_3.json in Resources */ = {isa = PBXBuildFile; fileRef = 22EEF1ED22E802670035D25E /* transactions_3.json */; };
 		2236308D22E81B5E0086260F /* transactions_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 22EEF1EE22E802670035D25E /* transactions_2.json */; };
 		2236308E22E81B5E0086260F /* transactions_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 22EEF1EF22E802670035D25E /* transactions_1.json */; };
 		2236308F22E81B5E0086260F /* accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = 22EEF1F022E802670035D25E /* accounts.json */; };
 		223E8C7C22E80BD300980D0C /* LogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E8C7B22E80BD300980D0C /* LogicTests.swift */; };
-		223E8C8322E80C2100980D0C /* ThemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E8C8222E80C2100980D0C /* ThemeTests.swift */; };
 		223E8C8D22E819BA00980D0C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EEF1F922E802880035D25E /* HomeViewController.swift */; };
 		22EEF1CA22E8020D0035D25E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EEF1C922E8020D0035D25E /* AppDelegate.swift */; };
 		22EEF1D122E8020F0035D25E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22EEF1D022E8020F0035D25E /* Assets.xcassets */; };
@@ -29,6 +26,9 @@
 		22EEF1F722E802710035D25E /* transactions_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 22EEF1EF22E802670035D25E /* transactions_1.json */; };
 		22EEF1F822E802710035D25E /* accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = 22EEF1F022E802670035D25E /* accounts.json */; };
 		22EEF1FA22E802880035D25E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EEF1F922E802880035D25E /* HomeViewController.swift */; };
+		F761139522E852580073006F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761139422E852580073006F /* APIClient.swift */; };
+		F761139622E852580073006F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761139422E852580073006F /* APIClient.swift */; };
+		F761139822E852E00073006F /* ThemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761139722E852E00073006F /* ThemeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2236308922E81B030086260F /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = ../../../../../../System/Volumes/Data/Users/sam/Projects/MTCodeChallenge/MTCodeChallenge/Helppers/APIClient.swift; sourceTree = "<group>"; };
 		223E8C7922E80BD300980D0C /* LogicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		223E8C7B22E80BD300980D0C /* LogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicTests.swift; sourceTree = "<group>"; };
 		223E8C7D22E80BD300980D0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		223E8C8222E80C2100980D0C /* ThemeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThemeTests.swift; path = ../../../../../System/Volumes/Data/Users/sam/Projects/MTCodeChallenge/LogicTests/ThemeTests.swift; sourceTree = "<group>"; };
 		223E8C8822E8191C00980D0C /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		223E8C8C22E8198A00980D0C /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		22EEF1C622E8020D0035D25E /* MTCodeChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTCodeChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +65,8 @@
 		22EEF1F322E802670035D25E /* screen_2_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_2_2.png; sourceTree = "<group>"; };
 		22EEF1F422E802670035D25E /* screen_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_1.png; sourceTree = "<group>"; };
 		22EEF1F922E802880035D25E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F761139422E852580073006F /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		F761139722E852E00073006F /* ThemeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				223E8C7B22E80BD300980D0C /* LogicTests.swift */,
+				F761139722E852E00073006F /* ThemeTests.swift */,
 				223E8C7D22E80BD300980D0C /* Info.plist */,
-				223E8C8222E80C2100980D0C /* ThemeTests.swift */,
 			);
 			path = LogicTests;
 			sourceTree = "<group>";
@@ -115,8 +115,8 @@
 		223E8C8922E8195E00980D0C /* Helppers */ = {
 			isa = PBXGroup;
 			children = (
+				F761139422E852580073006F /* APIClient.swift */,
 				223E8C8C22E8198A00980D0C /* Theme.swift */,
-				2236308922E81B030086260F /* APIClient.swift */,
 			);
 			path = Helppers;
 			sourceTree = "<group>";
@@ -352,9 +352,9 @@
 				2236308822E81ABF0086260F /* Account.swift in Sources */,
 				223E8C7C22E80BD300980D0C /* LogicTests.swift in Sources */,
 				2236308622E81A810086260F /* Theme.swift in Sources */,
-				223E8C8322E80C2100980D0C /* ThemeTests.swift in Sources */,
 				223E8C8D22E819BA00980D0C /* HomeViewController.swift in Sources */,
-				2236308B22E81B030086260F /* APIClient.swift in Sources */,
+				F761139622E852580073006F /* APIClient.swift in Sources */,
+				F761139822E852E00073006F /* ThemeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +365,7 @@
 				2236308522E81A800086260F /* Theme.swift in Sources */,
 				2236308722E81ABE0086260F /* Account.swift in Sources */,
 				22EEF1CA22E8020D0035D25E /* AppDelegate.swift in Sources */,
-				2236308A22E81B030086260F /* APIClient.swift in Sources */,
+				F761139522E852580073006F /* APIClient.swift in Sources */,
 				22EEF1FA22E802880035D25E /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
