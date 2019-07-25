@@ -6,12 +6,7 @@ import XCTest
 class APIClientTests: XCTestCase {
     
     // create a json decoder instant
-    let decoder: JSONDecoder = {
-        let decoder = JSONDecoder()
-        // this will auto convert snake case to camel case
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        return decoder
-    }()
+    let decoder = JSONDecoder.custom
     
     // Test load the accounts files into accounts
     func testLoadAccount() {

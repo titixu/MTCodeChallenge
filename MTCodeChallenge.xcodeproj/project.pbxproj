@@ -26,8 +26,11 @@
 		22EEF1F722E802710035D25E /* transactions_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 22EEF1EF22E802670035D25E /* transactions_1.json */; };
 		22EEF1F822E802710035D25E /* accounts.json in Resources */ = {isa = PBXBuildFile; fileRef = 22EEF1F022E802670035D25E /* accounts.json */; };
 		22EEF1FA22E802880035D25E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EEF1F922E802880035D25E /* HomeViewController.swift */; };
+		F70CDF1422E94CEE00FC4BB7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CDF1322E94CEE00FC4BB7 /* HomeViewModel.swift */; };
+		F70CDF1522E94CEE00FC4BB7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CDF1322E94CEE00FC4BB7 /* HomeViewModel.swift */; };
+		F70CDF1922E954DD00FC4BB7 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CDF1822E954DD00FC4BB7 /* HomeViewModelTests.swift */; };
+		F70CDF1A22E955B700FC4BB7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761139422E852580073006F /* APIClient.swift */; };
 		F761139522E852580073006F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761139422E852580073006F /* APIClient.swift */; };
-		F761139622E852580073006F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761139422E852580073006F /* APIClient.swift */; };
 		F761139822E852E00073006F /* ThemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761139722E852E00073006F /* ThemeTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +68,8 @@
 		22EEF1F322E802670035D25E /* screen_2_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_2_2.png; sourceTree = "<group>"; };
 		22EEF1F422E802670035D25E /* screen_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen_1.png; sourceTree = "<group>"; };
 		22EEF1F922E802880035D25E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F70CDF1322E94CEE00FC4BB7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F70CDF1822E954DD00FC4BB7 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		F761139422E852580073006F /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		F761139722E852E00073006F /* ThemeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,13 +126,6 @@
 			path = Helppers;
 			sourceTree = "<group>";
 		};
-		223E8C8A22E8196D00980D0C /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		223E8C8B22E8197D00980D0C /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,8 +158,8 @@
 		22EEF1C822E8020D0035D25E /* MTCodeChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				F70CDF1222E94CDC00FC4BB7 /* View Models */,
 				223E8C8B22E8197D00980D0C /* Views */,
-				223E8C8A22E8196D00980D0C /* ViewModels */,
 				223E8C8922E8195E00980D0C /* Helppers */,
 				223E8C8722E8191C00980D0C /* Data Models */,
 				22EEF1F922E802880035D25E /* HomeViewController.swift */,
@@ -178,6 +176,7 @@
 			children = (
 				22EEF1DE22E8020F0035D25E /* MTCodeChallengeTests.swift */,
 				22EEF1E022E8020F0035D25E /* Info.plist */,
+				F70CDF1822E954DD00FC4BB7 /* HomeViewModelTests.swift */,
 			);
 			path = MTCodeChallengeTests;
 			sourceTree = "<group>";
@@ -211,6 +210,14 @@
 				22EEF1F422E802670035D25E /* screen_1.png */,
 			);
 			path = ideas;
+			sourceTree = "<group>";
+		};
+		F70CDF1222E94CDC00FC4BB7 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				F70CDF1322E94CEE00FC4BB7 /* HomeViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,10 +357,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2236308822E81ABF0086260F /* Account.swift in Sources */,
+				F70CDF1A22E955B700FC4BB7 /* APIClient.swift in Sources */,
 				223E8C7C22E80BD300980D0C /* LogicTests.swift in Sources */,
+				F70CDF1522E94CEE00FC4BB7 /* HomeViewModel.swift in Sources */,
 				2236308622E81A810086260F /* Theme.swift in Sources */,
 				223E8C8D22E819BA00980D0C /* HomeViewController.swift in Sources */,
-				F761139622E852580073006F /* APIClient.swift in Sources */,
 				F761139822E852E00073006F /* ThemeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2236308522E81A800086260F /* Theme.swift in Sources */,
+				F70CDF1422E94CEE00FC4BB7 /* HomeViewModel.swift in Sources */,
 				2236308722E81ABE0086260F /* Account.swift in Sources */,
 				22EEF1CA22E8020D0035D25E /* AppDelegate.swift in Sources */,
 				F761139522E852580073006F /* APIClient.swift in Sources */,
@@ -375,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22EEF1DF22E8020F0035D25E /* MTCodeChallengeTests.swift in Sources */,
+				F70CDF1922E954DD00FC4BB7 /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,7 +564,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LJD4E9EV47;
 				INFOPLIST_FILE = MTCodeChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -572,7 +582,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LJD4E9EV47;
 				INFOPLIST_FILE = MTCodeChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

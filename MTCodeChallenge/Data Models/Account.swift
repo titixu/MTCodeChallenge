@@ -26,7 +26,7 @@ struct Transaction: Codable {
     var accountId: Int
     var amount: Double
     var categoryId: Int
-    var date: String
+    var date: Date
     var description: String?
     var id: Int
 }
