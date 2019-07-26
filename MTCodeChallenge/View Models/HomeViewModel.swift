@@ -13,15 +13,23 @@ struct HomeViewModel {
             onUpdate(self)
         }
     }
+    // call while loading data
+    var onLoading: () -> Void
+    
     // callback when the accounts updated
     var onUpdate: (HomeViewModel) -> Void
     
-    init(apiClient: APIClient, onUpdate: @escaping (HomeViewModel) -> Void) {
+    init(apiClient: APIClient,
+         onLoading: @escaping () -> Void,
+         onUpdate: @escaping (HomeViewModel) -> Void) {
         self.apiClient = apiClient
+        self.onLoading = onLoading
         self.onUpdate = onUpdate
     }
     
     mutating func updateAccounts() {
+        onLoading() // update loading state
+        
         apiClient.loadAccounts { (accounts) in
             
             // first group the account by it institution property
@@ -44,4 +52,42 @@ struct HomeViewModel {
             self.accountsGrouped = reuslt
         }
     }
+}
+
+// Table view data source
+extension HomeViewModel {
+    func numberOfSections() -> Int {
+        return accountsGrouped.count
+    }
+    
+    func numberOfRowsInSection(_ section: Int) -> Int {
+        return accountsGrouped[section].count
+    }
+    
+    func titleForHeader(inSection section: Int) -> String? {
+        return accountsGrouped[section].first?.institution
+    }
+    
+    func account(indexPath: IndexPath) -> Account {
+        return accountsGrouped[indexPath.section][indexPath.row]
+    }
+    
+    func amountString(account: Account) -> String {
+        return account.currentBalanceInBase.currency
+    }
+}
+
+// Table Header view data source
+extension HomeViewModel {
+    
+    var totalAmount: String {
+        let total = accountsGrouped.reduce(0.0) { (result, accounts) -> Double in
+            result + accounts.reduce(0.0, { (resultInner, account) -> Double in
+                resultInner + account.currentBalanceInBase
+            })
+        }
+        
+        return total.currency
+    }
+    
 }

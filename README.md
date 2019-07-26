@@ -6,7 +6,8 @@ This is a demo project for MoneyTree code Challenage
 - MacOS 10.14 or above
 
 ## Assumptions and Limitations 
-
+- the currency string is harcoded to use "jp_JP" locale for currency format
+- Currency string is not displaying with the "comma" in the simulator device, looks like a system bug 
 
 ## Unit Tests
 The development are base on TDD by using nano-cycles, and micro-cycles. 
@@ -26,3 +27,9 @@ There are two Unit Tests targets.
 ### Create Data Objects and logic tests target
 1 Create and test the APIClient that loadup the account details
 2 Create and test the data models: Account and Transaction
+3 Create API Client that load json files and convert json data to Objects
+4 Create HomeViewModel
+5 Create home table view concontroller
+6 Create AccountViewModel
+7 Create AccountViewController
+

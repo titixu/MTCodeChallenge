@@ -38,6 +38,7 @@ struct APIClient {
 // this is for loading the sample json files in the main bundle
 // Do be carefull, as LogicTests doesn't have access to main bundle
 fileprivate func loadJsonFile(_ name: String, withExtension: String) -> Data? {
+    // TODO: Should not hardcode to main bundle, so it can be test by other target bundle, such as LogicTests target
     guard let url = Bundle.main.url(forResource: name, withExtension: withExtension) else {
         return nil
     }

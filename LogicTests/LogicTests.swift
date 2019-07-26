@@ -25,7 +25,11 @@ class APIClientTests: XCTestCase {
         
         // test to match the sample json data
         XCTAssertEqual(accounts.count, 3, "Should have 3 accounts")
-        XCTAssertEqual(accounts[0].id, 1, "First account id is 1")
+        XCTAssertEqual(accounts[0].id, 1, "First account id should 1")
+        XCTAssertEqual(accounts[0].type, AccountType.foreign, "First account should be a foregign account")
+        
+        XCTAssertEqual(accounts[1].id, 2, "Second account id should be 2")
+        XCTAssertEqual(accounts[1].type, AccountType.local, "Second account should be a local account")
     }
     
     func testLoadTransaction() {
@@ -67,3 +71,12 @@ fileprivate func loadJsonFile(_ name: String, withExtension: String) -> Data? {
     return try? Data.init(contentsOf: url)
 }
 
+class MiscTests: XCTestCase {
+    
+    func testCurrencyString() {
+        let amount = 3600.0
+        XCTAssertTrue(amount.currency.contains("JPY"))
+        XCTAssertTrue(amount.currency.contains("3600"))
+    }
+    
+}

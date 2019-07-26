@@ -18,6 +18,22 @@ struct Account: Codable {
     var currentBalanceInBase: Double
 }
 
+enum AccountType {
+    case local
+    case foreign
+}
+
+// Assuming default account type is JP
+extension Account {
+    var type: AccountType {
+        if currency == "JPY" {
+            return .local
+        } else {
+            return .foreign
+        }
+    }
+}
+
 struct TransactionsJSONObject: Codable {
     let transactions: [Transaction]
 }
