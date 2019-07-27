@@ -6,7 +6,7 @@ import Foundation
 struct AccountViewModel {
     var apiClient:APIClient
     var accountID: Int
-    var transactions: [[Transaction]] = []
+    var transactionsGrouped: [[Transaction]] = []
     
     var onLoading: (AccountViewModel) -> Void
     var onComplete: (AccountViewModel) -> Void
@@ -39,13 +39,35 @@ struct AccountViewModel {
                         $0.date > $1.date
                     })
             }
-            self.transactions = result
+            self.transactionsGrouped = result
             
             onComplete(self)
         }
         
     }
     
+}
+
+// Table View Data
+extension AccountViewModel {
+    
+    func transaction(indexPath: IndexPath) -> Transaction {
+        return transactionsGrouped[indexPath.section][indexPath.row]
+    }
+    
+    func numberOfSections() -> Int {
+        return transactionsGrouped.count
+    }
+    
+    func numberOfRowsInSection(_ section: Int) -> Int {
+        return transactionsGrouped[section].count
+    }
+    
+    func transactionDayString(_ transaction: Transaction) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd"
+        return formatter.string(from: transaction.date)
+    }
 }
 
 fileprivate extension DateFormatter {

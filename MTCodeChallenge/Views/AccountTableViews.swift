@@ -95,20 +95,50 @@ class  AccountHeaderView: UIView {
     }
 }
 
-class TransactionCell: AccountCell {
+
+class TransactionCell: UITableViewCell {
+    
+    // show the description of the transaction
+    var descirptionLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .textColor
+        // it can be compressed when desctription is too long
+        label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        return label
+    }()
+    
+    // show the amount of the transaction
+    var amountLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .textColor
+        label.textAlignment = .right
+        return label
+    }()
+    
     // show the date for excample 26
     var dayLabel: UILabel = {
         let label = UILabel()
         label.textColor = .textColor
         label.text = "26"
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
+        // daylabel doesn't need a lot of space to display, shorten the width
+        label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         return label
     }()
     
-    override func setupViews() {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    func setupViews() {
         backgroundColor = .clear
-        let stackView = UIStackView(arrangedSubviews: [dayLabel, nicknameLabel, amountLabel])
-        stackView.distribution = .fillProportionally
+        let stackView = UIStackView(arrangedSubviews: [dayLabel, descirptionLabel, amountLabel])
+        stackView.spacing = 8.0
+        
         stackView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(stackView)
         NSLayoutConstraint.activate([
@@ -118,5 +148,5 @@ class TransactionCell: AccountCell {
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -.padding)
             ])
     }
-    
+
 }

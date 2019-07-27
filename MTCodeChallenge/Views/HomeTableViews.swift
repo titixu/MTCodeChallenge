@@ -19,7 +19,8 @@ class AmountHeaderView: UIView {
         let label = UILabel(frame: .zero)
         label.textColor = .textColor
         label.text = "$$$$"
-        label.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        label.contentHuggingPriority(for: .horizontal)
+        
         return label
     }()
     
@@ -56,14 +57,14 @@ class AccountCell: UITableViewCell {
     var nicknameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .textColor
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
+        // compree when the nick name is too long
+        label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         return label
     }()
     
     var amountLabel: UILabel = {
         let label = UILabel()
         label.textColor = .textColor
-        label.font = UIFont.preferredFont(forTextStyle: .title2)
         label.textAlignment = .right
         return label
     }()
@@ -81,6 +82,8 @@ class AccountCell: UITableViewCell {
         backgroundColor = .clear
         let stackView = UIStackView(arrangedSubviews: [nicknameLabel, amountLabel])
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.spacing = 8.0
+        
         contentView.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),

@@ -5,6 +5,8 @@ import UIKit
 
 class AccountViewController: UITableViewController {
 
+    private let transactionCellIdentifier = "transactionCellIdentifier"
+    
     var apiClient: APIClient
     private let account: Account
     
@@ -51,10 +53,43 @@ class AccountViewController: UITableViewController {
         self.title = account.nickname
         view.backgroundColor = UIColor.appBackground
         
+        tableView.register(TransactionCell.self, forCellReuseIdentifier: transactionCellIdentifier)
         tableView.tableHeaderView = headerView
-
+        tableView.tableFooterView = UIView()
+        
         // start fetching the account's transaction
         viewModel.fetchAccount()
     }
 
+}
+
+// Table View data source
+extension AccountViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.numberOfSections()
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRowsInSection(section)
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let transaction = viewModel.transaction(indexPath: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: transactionCellIdentifier, for: indexPath) as? TransactionCell  else {
+            return UITableViewCell()
+        }
+        
+        cell.dayLabel.text = viewModel.transactionDayString(transaction)
+        cell.descirptionLabel.text = transaction.description
+        cell.amountLabel.text = transaction.amount.currency
+        return cell
+    }
+}
+
+// TableView Delegate
+extension AccountViewController {
+    // some space between rows
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50.0
+    }
 }
