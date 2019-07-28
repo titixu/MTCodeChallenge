@@ -3,14 +3,26 @@
 
 import UIKit
 
+/**
+ This is account detail view controller, which dispay details of that account and transactions ordered most recently first
+ */
+
 class AccountViewController: UITableViewController {
 
+    // table view cell identifier
     private let transactionCellIdentifier = "transactionCellIdentifier"
+    
+    // table view section header view identifier
     private let transactionSectionHeaderViewIdentifier = "transactionSectionHeaderViewIdentifier"
     
+    // API client for fetching data
     var apiClient: APIClient
+    
+    // the account that will be display in this view controller
     private let account: Account
     
+    // Table header view for display account total amount and current month in/out amount
+    // Alway create view in lazy, better wait for the controller to finished loading it's views
     lazy var headerView = AccountHeaderView(viewModel: self.viewModel.headerViewModel,
                                             frame: CGRect(x: 0, y: 0, width: 150, height: 130))
     
@@ -19,6 +31,7 @@ class AccountViewController: UITableViewController {
         AccountViewModel(account: account,
                          apiClient: apiClient,
                          onLoading: { (viewModel) in
+                            // this will get call when view Model is busy loading data
                             DispatchQueue.main.async {
                                 // this won't be notice as it end too fast
                                 // but will get display if it is a long loading process
@@ -32,6 +45,7 @@ class AccountViewController: UITableViewController {
                                 self.tableView.refreshControl?.endRefreshing()
                                 self.tableView.refreshControl = nil
                                 
+                                // update the table header view with new header view model
                                 self.headerView.viewModel = viewModel.headerViewModel
 
                                 self.tableView.reloadData()
