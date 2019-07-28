@@ -40,10 +40,18 @@
 		F70CDF2C22EA8E9600FC4BB7 /* AccountTableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CDF2B22EA8E9600FC4BB7 /* AccountTableViews.swift */; };
 		F761139522E852580073006F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761139422E852580073006F /* APIClient.swift */; };
 		F761139822E852E00073006F /* ThemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761139722E852E00073006F /* ThemeTests.swift */; };
+		F7A9BA5B22ED709F00E8A852 /* MTCodeChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9BA5A22ED709F00E8A852 /* MTCodeChallengeUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		22EEF1DB22E8020F0035D25E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22EEF1BE22E8020D0035D25E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22EEF1C522E8020D0035D25E;
+			remoteInfo = MTCodeChallenge;
+		};
+		F7A9BA5D22ED709F00E8A852 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 22EEF1BE22E8020D0035D25E /* Project object */;
 			proxyType = 1;
@@ -87,6 +95,9 @@
 		F70CDF2B22EA8E9600FC4BB7 /* AccountTableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViews.swift; sourceTree = "<group>"; };
 		F761139422E852580073006F /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		F761139722E852E00073006F /* ThemeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeTests.swift; sourceTree = "<group>"; };
+		F7A9BA5822ED709F00E8A852 /* MTCodeChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MTCodeChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7A9BA5A22ED709F00E8A852 /* MTCodeChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTCodeChallengeUITests.swift; sourceTree = "<group>"; };
+		F7A9BA5C22ED709F00E8A852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +116,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		22EEF1D722E8020F0035D25E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A9BA5522ED709F00E8A852 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -151,6 +169,7 @@
 				22EEF1C822E8020D0035D25E /* MTCodeChallenge */,
 				22EEF1DD22E8020F0035D25E /* MTCodeChallengeTests */,
 				223E8C7A22E80BD300980D0C /* LogicTests */,
+				F7A9BA5922ED709F00E8A852 /* MTCodeChallengeUITests */,
 				22EEF1C722E8020D0035D25E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -161,6 +180,7 @@
 				22EEF1C622E8020D0035D25E /* MTCodeChallenge.app */,
 				22EEF1DA22E8020F0035D25E /* MTCodeChallengeTests.xctest */,
 				223E8C7922E80BD300980D0C /* LogicTests.xctest */,
+				F7A9BA5822ED709F00E8A852 /* MTCodeChallengeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,6 +262,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F7A9BA5922ED709F00E8A852 /* MTCodeChallengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F7A9BA5A22ED709F00E8A852 /* MTCodeChallengeUITests.swift */,
+				F7A9BA5C22ED709F00E8A852 /* Info.plist */,
+			);
+			path = MTCodeChallengeUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -297,13 +326,31 @@
 			productReference = 22EEF1DA22E8020F0035D25E /* MTCodeChallengeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F7A9BA5722ED709F00E8A852 /* MTCodeChallengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7A9BA6122ED709F00E8A852 /* Build configuration list for PBXNativeTarget "MTCodeChallengeUITests" */;
+			buildPhases = (
+				F7A9BA5422ED709F00E8A852 /* Sources */,
+				F7A9BA5522ED709F00E8A852 /* Frameworks */,
+				F7A9BA5622ED709F00E8A852 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7A9BA5E22ED709F00E8A852 /* PBXTargetDependency */,
+			);
+			name = MTCodeChallengeUITests;
+			productName = MTCodeChallengeUITests;
+			productReference = F7A9BA5822ED709F00E8A852 /* MTCodeChallengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		22EEF1BE22E8020D0035D25E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Sam Xu";
 				TargetAttributes = {
@@ -315,6 +362,10 @@
 					};
 					22EEF1D922E8020F0035D25E = {
 						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 22EEF1C522E8020D0035D25E;
+					};
+					F7A9BA5722ED709F00E8A852 = {
+						CreatedOnToolsVersion = 10.3;
 						TestTargetID = 22EEF1C522E8020D0035D25E;
 					};
 				};
@@ -335,6 +386,7 @@
 				22EEF1C522E8020D0035D25E /* MTCodeChallenge */,
 				22EEF1D922E8020F0035D25E /* MTCodeChallengeTests */,
 				223E8C7822E80BD300980D0C /* LogicTests */,
+				F7A9BA5722ED709F00E8A852 /* MTCodeChallengeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -365,6 +417,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		22EEF1D822E8020F0035D25E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A9BA5622ED709F00E8A852 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -418,6 +477,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F7A9BA5422ED709F00E8A852 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7A9BA5B22ED709F00E8A852 /* MTCodeChallengeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -425,6 +492,11 @@
 			isa = PBXTargetDependency;
 			target = 22EEF1C522E8020D0035D25E /* MTCodeChallenge */;
 			targetProxy = 22EEF1DB22E8020F0035D25E /* PBXContainerItemProxy */;
+		};
+		F7A9BA5E22ED709F00E8A852 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22EEF1C522E8020D0035D25E /* MTCodeChallenge */;
+			targetProxy = F7A9BA5D22ED709F00E8A852 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -666,6 +738,44 @@
 			};
 			name = Release;
 		};
+		F7A9BA5F22ED709F00E8A852 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MTCodeChallengeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sam.xu.MTCodeChallengeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MTCodeChallenge;
+			};
+			name = Debug;
+		};
+		F7A9BA6022ED709F00E8A852 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MTCodeChallengeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = sam.xu.MTCodeChallengeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MTCodeChallenge;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -701,6 +811,15 @@
 			buildConfigurations = (
 				22EEF1E722E8020F0035D25E /* Debug */,
 				22EEF1E822E8020F0035D25E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7A9BA6122ED709F00E8A852 /* Build configuration list for PBXNativeTarget "MTCodeChallengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A9BA5F22ED709F00E8A852 /* Debug */,
+				F7A9BA6022ED709F00E8A852 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

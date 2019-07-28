@@ -26,7 +26,18 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "22EEF1C522E8020D0035D25E"
+            BuildableName = "MTCodeChallenge.app"
+            BlueprintName = "MTCodeChallenge"
+            ReferencedContainer = "container:MTCodeChallenge.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,6 +46,16 @@
                BlueprintIdentifier = "22EEF1D922E8020F0035D25E"
                BuildableName = "MTCodeChallengeTests.xctest"
                BlueprintName = "MTCodeChallengeTests"
+               ReferencedContainer = "container:MTCodeChallenge.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F7A9BA5722ED709F00E8A852"
+               BuildableName = "MTCodeChallengeUITests.xctest"
+               BlueprintName = "MTCodeChallengeUITests"
                ReferencedContainer = "container:MTCodeChallenge.xcodeproj">
             </BuildableReference>
          </TestableReference>

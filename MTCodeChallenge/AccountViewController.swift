@@ -88,9 +88,12 @@ extension AccountViewController {
             return UITableViewCell()
         }
         
-        cell.dayLabel.text = viewModel.transactionDayString(transaction)
+        let day = viewModel.transactionDayString(transaction)
+        cell.dayLabel.text = day
         cell.descirptionLabel.text = transaction.description
-        cell.amountLabel.text = account.currencyString(amount: transaction.amount)
+        let amount = account.currencyString(amount: transaction.amount)
+        cell.amountLabel.text = amount
+        cell.accessibilityLabel = "Transaction at day \(day), description \(transaction.description ?? "Empty description"), amount \(amount)"
         return cell
     }
     

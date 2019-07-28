@@ -24,9 +24,7 @@ Added extra string to describe the value of the label by using "accessibilityVal
 
 Added "accessibilityHint" to guide user to double tap the cell
 
-## Assumptions and Limitations 
-- the currency string is harcoded to use "jp_JP" locale for currency format
-- Currency string is not displaying with the "comma" in the simulator device, looks like a system bug 
+Relace "accessibilityLabel" value for table cells to describe more detail of a cell
 
 ## Unit Tests
 The development are base on TDD by using nano-cycles, and micro-cycles. 
@@ -35,6 +33,13 @@ Both Unit Test targets have the "Randomize execution order" option on, this will
 There are two Unit Tests targets.
 - "MTCodeChallengeTests" that rquires the MTCodeChallenge app as host. Which it is for testing the app
 - "LogicTests" is a host-less testing target. As it doesn't requires the host app, it is good for test the logics, and it making sure the testing logic in not depend on the app or other object. Also this make TDD development faster.
+
+## UI Tests
+There is one UI test target MTCodeChallengeUITests. It is for testing UI exstence and also test the navigations between views. 
+
+## Assumptions and Limitations 
+- the currency string is harcoded to use "jp_JP" locale for currency format
+- Currency string is not displaying with the "comma" in the simulator device, looks like a system bug 
 
 ## Something to consider for real life app
 * Implement SwiftLint ( https://github.com/realm/SwiftLint ) to enforce Swift style and conventions.

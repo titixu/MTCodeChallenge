@@ -90,8 +90,7 @@ extension HomeViewController {
         
         cell.nicknameLabel.text = account.nickname
         cell.amountLabel.text = viewModel.amountString(account: account)
-        
-        cell.accessibilityHint = "Double tap to open"
+        cell.accessibilityLabel = "Nick Name \(account.nickname) has total amount \(viewModel.amountString(account: account)) Double tap to open"
         return cell
     }
     
