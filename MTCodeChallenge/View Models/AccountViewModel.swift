@@ -3,6 +3,8 @@
 
 import Foundation
 
+// AccountViewModel that provide data into AccountViewController
+
 struct AccountViewModel {
     var apiClient:APIClient
     var account: Account
@@ -11,6 +13,9 @@ struct AccountViewModel {
     var onLoading: (AccountViewModel) -> Void
     var onComplete: (AccountViewModel) -> Void
     
+    /**
+     inti the function with
+     */
     init(account: Account,
          apiClient: APIClient,
          onLoading: @escaping (AccountViewModel) -> Void,

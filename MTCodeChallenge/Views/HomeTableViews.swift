@@ -2,6 +2,8 @@
 //  Copyright © 2019 Sam Xu. All rights reserved.
 //
 
+// this files contains all the views and cells needed for HomeViewController
+
 import UIKit
 
 // table header view on showing amount of title balances

@@ -3,6 +3,7 @@
 
 import Foundation
 
+// HomeViewModel that provide data into HomeViewController
 struct HomeViewModel {
     let apiClient: APIClient
     
