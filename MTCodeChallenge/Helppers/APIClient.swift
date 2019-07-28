@@ -20,36 +20,24 @@ struct APIClient {
     }
 
     func loadTransactions(for accountID: Int, completion: ([Transaction]) -> Void) {
-
+        let name = "transactions_\(accountID)"
         // Replace with Async calls if fetching from the remote server
-        let result = loadJSONFiles(["transactions_1", "transactions_2", "transactions_3"], withExtension: "json")
-            // convert data into transaction object and flat map into one transaction array
-            .flatMap { (data) -> [Transaction] in
-            let object = try? JSONDecoder.custom.decode(TransactionsJSONObject.self, from: data)
-            return object?.transactions ?? []
-            }
-            // only return the transactions with the accountID
-            .filter { $0.accountId == accountID }
+        guard let data = loadJsonFile(name, withExtension: "json") else { completion([]); return }
         
-        completion(result)
+        let object = try? JSONDecoder.custom.decode(TransactionsJSONObject.self, from: data)
+        completion(object?.transactions ?? [])
     }
+    
 }
 
 // this is for loading the sample json files in the main bundle
 // Do be carefull, as LogicTests doesn't have access to main bundle
 fileprivate func loadJsonFile(_ name: String, withExtension: String) -> Data? {
-    // TODO: Should not hardcode to main bundle, so it can be test by other target bundle, such as LogicTests target
+    // TODO: Should not hardcode to use main bundle, so it can be test by other target bundle, such as LogicTests target
     guard let url = Bundle.main.url(forResource: name, withExtension: withExtension) else {
         return nil
     }
     return try? Data.init(contentsOf: url)
-}
-
-// load files and return data array, it will auto ignore the nil data
-fileprivate func loadJSONFiles(_ names: [String], withExtension: String) -> [Data] {
-    return names.compactMap {
-        loadJsonFile($0, withExtension: withExtension)
-    }
 }
 
 // this is for decoding the date string from the transaction json

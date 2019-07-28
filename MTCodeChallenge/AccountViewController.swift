@@ -6,16 +6,17 @@ import UIKit
 class AccountViewController: UITableViewController {
 
     private let transactionCellIdentifier = "transactionCellIdentifier"
+    private let transactionSectionHeaderViewIdentifier = "transactionSectionHeaderViewIdentifier"
     
     var apiClient: APIClient
     private let account: Account
     
-    lazy var headerView = AccountHeaderView(isForeignAccountType: self.account.type == .foreign,
+    lazy var headerView = AccountHeaderView(viewModel: self.viewModel.headerViewModel,
                                             frame: CGRect(x: 0, y: 0, width: 150, height: 130))
     
     // delay creating viewModel, wait for the view to be loaded first
     lazy var viewModel: AccountViewModel = {
-        AccountViewModel(accountID: account.id,
+        AccountViewModel(account: account,
                          apiClient: apiClient,
                          onLoading: { (viewModel) in
                             DispatchQueue.main.async {
@@ -30,6 +31,9 @@ class AccountViewController: UITableViewController {
                                 // end the refesh loading indicator
                                 self.tableView.refreshControl?.endRefreshing()
                                 self.tableView.refreshControl = nil
+                                
+                                self.headerView.viewModel = viewModel.headerViewModel
+
                                 self.tableView.reloadData()
                             }
         })
@@ -48,14 +52,19 @@ class AccountViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // some default layout of navigation bar
         defaultNavigationBarLayout()
         
-        self.title = account.nickname
+        self.title = account.institution
         view.backgroundColor = UIColor.appBackground
         
+        // Table View setup
+        // regiser both cell and header view for reuse
         tableView.register(TransactionCell.self, forCellReuseIdentifier: transactionCellIdentifier)
+        tableView.register(TransactionSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: transactionSectionHeaderViewIdentifier)
         tableView.tableHeaderView = headerView
         tableView.tableFooterView = UIView()
+        tableView.allowsSelection = false
         
         // start fetching the account's transaction
         viewModel.fetchAccount()
@@ -81,8 +90,19 @@ extension AccountViewController {
         
         cell.dayLabel.text = viewModel.transactionDayString(transaction)
         cell.descirptionLabel.text = transaction.description
-        cell.amountLabel.text = transaction.amount.currency
+        cell.amountLabel.text = account.currencyString(amount: transaction.amount)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: transactionSectionHeaderViewIdentifier) as? TransactionSectionHeaderView
+
+        view?.dayLabel.text = viewModel.dayString(section: section)
+        view?.amountInLabel.text = viewModel.monthlyInString(section: section)
+        view?.amountOutLabel.text = viewModel.monthlyOutString(section: section)
+        return view
+        
     }
 }
 
@@ -91,5 +111,9 @@ extension AccountViewController {
     // some space between rows
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50.0
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30.0
     }
 }

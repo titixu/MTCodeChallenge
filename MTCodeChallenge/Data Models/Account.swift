@@ -32,6 +32,29 @@ extension Account {
             return .foreign
         }
     }
+    
+    // return the aount with currency type's ISOCode prefix
+    var currentBalanceString: String {
+        return currencyString(amount: currentBalance)
+    }
+    
+    var baseCurrencyString: String {
+        return currentBalanceInBase.currency // assume base currency is in JPY
+    }
+    
+    func currencyString(amount: Double) -> String {
+        if type == .local {
+            return amount.currency
+        }
+        
+        if currency == "USD" {
+            return amount.currencyUSD
+        }
+    
+    // missing the logic of getting current locale other than JPY and USD
+    return "\(currency) \(amount)"
+    
+    }
 }
 
 struct TransactionsJSONObject: Codable {

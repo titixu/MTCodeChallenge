@@ -14,6 +14,10 @@ extension UIColor {
         return UIColor(displayP3Red: 222.0/256, green: 97.0/256, blue: 45.0/256, alpha: 1.0)
     }
     
+    static var badge: UIColor {
+        return UIColor(displayP3Red: 165.0/256, green: 49.0/256, blue: 15.0/256, alpha: 1.0)
+    }
+    
     static var textColor: UIColor {
         return UIColor.white
     }

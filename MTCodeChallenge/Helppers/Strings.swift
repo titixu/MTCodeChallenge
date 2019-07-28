@@ -4,12 +4,24 @@
 import Foundation
 
 extension Double {
+    
+    // get the currency string of the value
+    // default is JPY currency
     var currency: String {
+        return currency(locale: Locale(identifier: "jp_JP"))
+        
+    }
+    
+    var currencyUSD: String {
+        return currency(locale: Locale(identifier: "us_US"))
+    }
+    
+    // get the currency string with a locale
+    func currency(locale: Locale) -> String {
         let numberFormatter = NumberFormatter()
-
-        // Looks like a sytem bug currencyISOCode string is missing the comma in the simulator
         numberFormatter.numberStyle = .currencyISOCode
-        numberFormatter.locale = Locale(identifier: "jp_JP")
+        numberFormatter.locale = locale
         return numberFormatter.string(from: NSNumber(value: self)) ?? ""
+
     }
 }

@@ -73,7 +73,7 @@ extension HomeViewModel {
     }
     
     func amountString(account: Account) -> String {
-        return account.currentBalanceInBase.currency
+        return account.currentBalanceString
     }
 }
 

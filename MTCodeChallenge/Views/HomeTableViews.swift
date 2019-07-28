@@ -19,8 +19,9 @@ class AmountHeaderView: UIView {
         let label = UILabel(frame: .zero)
         label.textColor = .textColor
         label.text = "$$$$"
+        label.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         label.contentHuggingPriority(for: .horizontal)
-        
+        label.accessibilityValue = "total amount of money"
         return label
     }()
     
@@ -65,6 +66,7 @@ class AccountCell: UITableViewCell {
     var amountLabel: UILabel = {
         let label = UILabel()
         label.textColor = .textColor
+        label.accessibilityValue = "total amount"
         label.textAlignment = .right
         return label
     }()
@@ -82,7 +84,7 @@ class AccountCell: UITableViewCell {
         backgroundColor = .clear
         let stackView = UIStackView(arrangedSubviews: [nicknameLabel, amountLabel])
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 8.0
+        stackView.spacing = .padding
         
         contentView.addSubview(stackView)
         NSLayoutConstraint.activate([

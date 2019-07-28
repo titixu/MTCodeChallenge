@@ -5,6 +5,25 @@ This is a demo project for MoneyTree code Challenage
 - Xcode Version 10 or above
 - MacOS 10.14 or above
 
+## To run the app
+1. check out or download the source code
+2. open it with Xcode 10.3 or above
+3. change the Development Team to you own one
+4. build and run it
+
+## Tasks completed
+- Data Task
+- User Stories 1, 2, 3, 4
+- Accessibility Support
+- Testings ( not 100% covered, out of time )
+- No warnings ( You will get the development team missing error, as it is assigned to my certificate and team )
+- REAMME file and documentations are created
+
+## Accessibility Support
+Added extra string to describe the value of the label by using "accessibilityValue", to help Voice Over to descript the label in more content.
+
+Added "accessibilityHint" to guide user to double tap the cell
+
 ## Assumptions and Limitations 
 - the currency string is harcoded to use "jp_JP" locale for currency format
 - Currency string is not displaying with the "comma" in the simulator device, looks like a system bug 
